@@ -11,11 +11,16 @@ app.get("/", (req, res) => {
   const articles = [
     {
       title: "My first Article",
-      createdAt: Date.now(),
+      createdAt: new Date(),
+      description: "This article has a little description",
+    },
+    {
+      title: "My Second Article",
+      createdAt: new Date(),
       description: "This article has a little description",
     },
   ];
-  res.render("index", { name: "Tajveez", articles });
+  res.render("articles/index", { name: "Tajveez", articles });
 });
 
 app.listen("5000");
