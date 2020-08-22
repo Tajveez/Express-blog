@@ -15,6 +15,7 @@
     <div class="container">
       <h1 class="mb-4">Blog Articles</h1>
       <a href="/articles/new" class="btn btn-success">New Article</a>
+    <% if(articles.length != 0){ %> 
     <% for (const article in articles) {
         if (articles.hasOwnProperty(article)) {
             const element = articles[article];%>
@@ -27,11 +28,15 @@
                 <div class="card-text mb-2">
                   <%= element.description %>
                 </div>
+                <a href="articles/<%= element.id %>" class="btn btn-primary">Read more</a>
               </div>
             </div>
        <% }
     }
     %>
+    <% } else { %>
+      <div class="mt-4">No Articles Available</div>
+    <% } %>
   </div>
   </body>
 </html>
